@@ -1,0 +1,75 @@
+<div class="form-section">
+  <h2>Apply Leave</h2>
+
+  <div *ngIf="authService.isAdmin()">
+    <label>Employee</label>
+    <select [(ngModel)]="leaveRequest.employeeId">
+      <option value="">-- Select Employee --</option>
+      <option *ngFor="let emp of employees()" [value]="emp.id">
+        {{ emp.employeeCode }} - {{ emp.fullName }}
+      </option>
+    </select>
+  </div>
+
+  <div *ngIf="authService.isEmployee()">
+    <label>Employee Id</label>
+    <input type="number" placeholder="Enter your Employee Id" [(ngModel)]="leaveRequest.employeeId" />
+  </div>
+
+  <div>
+    <label>From Date</label>
+    <input type="date" [(ngModel)]="leaveRequest.fromDate" />
+  </div>
+
+  <div>
+    <label>To Date</label>
+    <input type="date" [(ngModel)]="leaveRequest.toDate" />
+  </div>
+
+  <div>
+    <label>Reason</label>
+    <input type="text" placeholder="Reason" [(ngModel)]="leaveRequest.reason" />
+  </div>
+
+  <button (click)="applyLeave()">Apply Leave</button>
+</div>
+
+<h2>Leave Requests</h2>
+
+<p>Total Leave Requests: {{ leaves().length }}</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee Code</th>
+      <th>Employee Name</th>
+      <th>From Date</th>
+      <th>To Date</th>
+      <th>Total Days</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let leave of leaves()">
+      <td>{{ leave.employeeCode }}</td>
+      <td>{{ leave.employeeName }}</td>
+      <td>{{ leave.fromDate | date }}</td>
+      <td>{{ leave.toDate | date }}</td>
+      <td>{{ leave.totalDays }}</td>
+      <td>{{ leave.status }}</td>
+      <td>
+        <button *ngIf="leave.status === 'Pending'"
+                (click)="approveLeave(leave.id)">
+          Approve
+        </button>
+
+        <button *ngIf="leave.status === 'Pending'"
+                (click)="rejectLeave(leave.id)">
+          Reject
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

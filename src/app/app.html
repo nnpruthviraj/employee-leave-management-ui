@@ -1,0 +1,13 @@
+<nav *ngIf="authService.getToken()">
+  <a *ngIf="authService.isAdmin()" routerLink="/dashboard">Dashboard</a>
+
+  <a *ngIf="authService.isAdmin()" routerLink="/employees">Employees</a>
+
+  <a routerLink="/leaves">Leave Requests</a>
+
+  <button (click)="logout()">Logout</button>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

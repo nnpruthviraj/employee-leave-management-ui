@@ -1,0 +1,72 @@
+<div class="form-section">
+  <h2>Add Employee</h2>
+
+  <div>
+    <input type="text"
+           placeholder="Employee Code"
+           [(ngModel)]="employee.employeeCode"
+           [readonly]="editingEmployeeId !== null" />
+  </div>
+
+  <div>
+    <input type="text" placeholder="First Name" [(ngModel)]="employee.firstName" />
+  </div>
+
+  <div>
+    <input type="text" placeholder="Last Name" [(ngModel)]="employee.lastName" />
+  </div>
+
+  <div>
+    <input type="email" placeholder="Email" [(ngModel)]="employee.email" />
+  </div>
+
+  <div>
+    <input type="text" placeholder="Department" [(ngModel)]="employee.department" />
+  </div>
+
+  <div>
+    <input type="date" [(ngModel)]="employee.dateOfJoining" />
+  </div>
+
+  <button *ngIf="editingEmployeeId === null" (click)="createEmployee()">
+    Add Employee
+  </button>
+
+  <button *ngIf="editingEmployeeId !== null" (click)="updateEmployee()">
+    Update Employee
+  </button>
+
+  <hr>
+
+  <p>Total Employees: {{ employees().length }}</p>
+
+</div>
+
+  <h2>Employees</h2>
+
+  <p>Total Employees: {{ employees().length }}</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let emp of employees()">
+        <td>{{ emp.employeeCode }}</td>
+        <td>{{ emp.fullName }}</td>
+        <td>{{ emp.email }}</td>
+        <td>{{ emp.department }}</td>
+        <td>
+          <button (click)="editEmployee(emp.id)">Edit</button>
+          <button (click)="deleteEmployee(emp.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

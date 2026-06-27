@@ -1,0 +1,124 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f4f6f8;
+  color: #222;
+}
+
+nav {
+  background-color: #1f2937;
+  padding: 15px 25px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+  nav button {
+    margin-left: auto;
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+  }
+
+h2 {
+  color: #111827;
+}
+
+input,
+select {
+  padding: 8px;
+  margin: 6px 0;
+  width: 250px;
+  display: block;
+}
+
+button {
+  padding: 8px 14px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #e5e7eb;
+}
+
+.container {
+  padding: 25px;
+}
+
+form,
+.form-section {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 25px;
+  border: 1px solid #ddd;
+}
+
+
+button {
+  border: none;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 4px;
+}
+
+  button:hover {
+    opacity: 0.85;
+  }
+
+  button:last-child {
+    background-color: #dc2626;
+  }
+
+table button:first-child {
+  background-color: #2563eb;
+}
+
+table button:last-child {
+  background-color: #dc2626;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+  nav a {
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+
+    nav a:hover {
+      background-color: #374151;
+    }
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}

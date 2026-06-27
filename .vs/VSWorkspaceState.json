@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.angular",
+    "\\.angular\\cache",
+    "\\dist",
+    "\\public",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\pages",
+    "\\src\\app\\pages\\leaves",
+    "\\src\\app\\pages\\login",
+    "\\src\\app\\services"
+  ],
+  "SelectedNode": "\\src\\app\\guards",
+  "PreviewInSolutionExplorer": false
+}
